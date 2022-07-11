@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  hiverepo:
+    image: yourregistry/hiverepo:latest
+    container_name: hiverepo
+    restart: unless-stopped
+    ports:
+      - 80:80 # Optional; if you have a reverse proxy may want to use that
+    volumes:
+      - ./container_data/hiverepo/repo:/var/www/html/repomirror/repo
